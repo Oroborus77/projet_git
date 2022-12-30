@@ -1,0 +1,28 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Editer un Produit{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron text-center"
+             style="
+                     text-align: center;
+                     background: url({{ asset('assets/img/videos/GIF/colorfulbar.gif') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     margin-bottom: 0px;
+                     font-size: 35px">
+        <div class="container" style="color: whitesmoke;
+            font-size: 40px;
+            font-family: 'Lobster', cursive;">
+            <div class="container" style="font-size: 58px">
+                <h1 style="color: whitesmoke;text-align: center;text-decoration-line: underline;margin-top: 20px;margin-bottom: 0px">Edition du Produit</h1>
+            </div>
+        </div>
+    </div>
+<div style="text-align: center;font-weight: bold">
+    {{ include('product/_form.html.twig') }}
+    <a style="display: flex;flex-direction: column;text-align: center;justify-content: center;justify-items: center;margin-left: auto;margin-right: auto;margin-bottom: 20px;width: 160px;font-weight: bold" class="btn btn-warning" href="{{ path('app_product_index') }}">Retour à la liste</a>
+    {{ include('product/_delete_form.html.twig') }}
+</div>
+{% endblock %}

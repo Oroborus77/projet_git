@@ -1,0 +1,251 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil Neoflips-Projet Etudiant{% endblock %}
+
+{% block body %}
+        <div class="jumbotron-text-center">
+            <video id="videobann" autoplay muted loop>
+                <source src="/assets/img/videos/colorbar6.webm" type="video/webm"></video>
+
+           <div class="overlay">
+            <div id="typed-strings">
+                <p>Bienvenue chez <strong>NEOFLIPS-PINCAB!</strong></p>
+                <p>Nous vous souhaitons une bonne visite.</p>
+            </div>
+            <span id="typed"></span>
+      </div>
+    </div>
+
+ <div class="container" id="carouss1" style="padding: 0%;
+        margin:0px;
+        max-width: 100%;
+        height: 100% ">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner"  style="
+                width: 100%;
+                height: 100%;">
+                <div class="carousel-item active" data-interval="10000">
+                    <img src="/assets/img/carousel/1.webp" loading="lazy" width=800 height=500 class="d-block w-100" alt="Image Pincab Minicab 1">
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                    <img src="/assets/img/carousel/2.webp" loading="lazy" width="1200px" height="800px" class="d-block w-100" alt="Image Pincab SlimCab">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/img/carousel/3.webp" loading="lazy" width="1200px" height="800px" class="d-block w-100" alt="Image Image Pincab Deluxe">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/img/carousel/4.webp" loading="lazy" width="1200px" height="800px" class="d-block w-100" alt="Image Pincab Concept">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/img/carousel/0.webp" loading="lazy" width="1200px" height="800px" class="d-block w-100" alt="ShowRoom Pincabs">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span style="width: 30px;height: 30px" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span style="width: 30px;height: 30px" class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="jumbotron text-center" id="jumbot">
+            <div class="container">
+
+                <div id="typed-strings2">
+                    <p>Nouveau dans le monde du <strong>Pincab</strong> ?<br>
+                       Laissez nous vous faire un petit résumé...</p>
+                </div>
+                <span id="typed2"></span>
+            </div>
+    </div>
+
+    <div class="container" style="
+display: block;
+justify-content: center;
+width: 100%;
+height: 100%;
+font-family: 'Lobster Regular' ,'Calibri', sans-serif;
+font-size: 40px;">
+
+        <div id="fullscreen" style="width: 100%;
+         height:100%">
+            <div id="fullscreen-inner">
+                <div id="fullscreen-inner-left" class="fullscreen-inner-button"><span class="icon-caret-left"></span></div>
+                <div id="fullscreen-inner-right" class="fullscreen-inner-button"><span class="icon-caret-right"></span></div>
+                <div style="margin-top:60px;" id="fullscreen-inner-close" class="fullscreen-inner-button"><span class="icon-close"></span></div>
+                <div id="fullscreen-image"
+                     style="
+                max-width: 100%;
+                max-height: 100%">
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-inner-title-main" id="wllpprTxt1">
+            <div id="wrapper">
+
+                <div id="wrapper-inner-selection">
+                </div>
+
+                <div class="wrapper-inner-title-titre">
+                    <h1>"C'est quoi un pincab ?!"</h1>
+                </div>
+                <div class="wrapper-inner-title-p">
+                   <h2>Le pincab est un flipper numérique.</h2><br>
+                        <p>Il permet d’émuler l’ensemble des flippers des années 70’s (mécanique) comme ceux des années 90’s et nouvelle generation (DOT).<br>
+                        De plus, plusieurs tables sont animées par des animations vidéos sur le fronton.<br>
+                        Au total plus de 350 tables de jeux !</p>
+                </div>
+
+                    <div class="wrapper-inner-title">
+                        <div class="text-wrap">
+                            <p>Mini flipper virtuel prêt à jouer, retrouvez toutes les tables de flipper de votre enfance dans une seule machine compacte et transportable.</p>
+                        </div>
+                    </div>
+
+                <div class="wrapper-inner-content">
+
+                    <div class="wrapper-inner-content-image" id="gallerie">
+                        <img src="/assets/img/accueil/MINI/1.webp" loading="eager" alt="Pincab mini 1">
+                        <img src="/assets/img/accueil/MINI/2.webp" loading="lazy" alt="Pincab mini 2">
+                        <img src="/assets/img/accueil/MINI/3.webp" loading="lazy" alt="Pincab mini 3">
+                        <img src="/assets/img/accueil/MINI/4.webp" loading="lazy" alt="Pincab mini 4">
+                        <img src="/assets/img/accueil/MINI/5.webp" loading="lazy" alt="Pincab mini 5">
+                        <img src="/assets/img/accueil/MINI/6.webp" loading="lazy" alt="Pincab mini 6">
+                        <img src="/assets/img/accueil/MINI/7.webp" loading="lazy" alt="Pincab mini 7">
+                        <img src="/assets/img/accueil/MINI/8.webp" loading="lazy" alt="Pincab mini 8">
+
+                        <div class="wrapper-inner-content-image-hover">
+                            <div class="wrapper-inner-content-image-hover-cercle">
+                                <span class="icon-search"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="wrapper-inner-title">
+                    <p id="minifliptext">Options disponibles :<br></p>
+                    <div class="wrapper-inner-title-2">
+                        <p>- Accéléromètre : il permet de bouger la bille en secouant le flipper pour plus de réalisme.<br>
+
+                            - Lance bille avec potentiomètre : dosez très précisément le lancement de la bille en jeu, indispensable pour les skill shots.<br>
+
+                            - Bouton de flipper à lamelles : Vivez le ressenti d'un vrai flipper grâce à cette option. Nous équiperons alors votre pincab de boutons comme les flippers.</p>
+                    </div>
+                </div>
+
+                <div class="wrapper-inner-content">
+
+                    <div class="wrapper-inner-content-image" id="gallerie2">
+
+                        <img src="/assets/img/accueil/STANDARD/1.webp" loading="eager" alt="Pincab taille Standard 1">
+                        <img src="/assets/img/accueil/STANDARD/2.webp" loading="lazy" alt="Pincab taille Standard 2">
+                        <img src="/assets/img/accueil/STANDARD/3.webp" loading="lazy" alt="Pincab taille Standard 3">
+                        <img src="/assets/img/accueil/STANDARD/4.webp" loading="lazy" alt="Pincab taille Standard 4">
+                        <img src="/assets/img/accueil/STANDARD/5.webp" loading="lazy" alt="Pincab taille Standard 5">
+                        <img src="/assets/img/accueil/STANDARD/6.webp" loading="lazy" alt="Pincab taille Standard 6">
+                        <img src="/assets/img/accueil/STANDARD/7.webp" loading="lazy" alt="Pincab taille Standard 7">
+                        <img src="/assets/img/accueil/STANDARD/8.webp" loading="lazy" alt="Pincab taille Standard 8">
+
+                        <div class="wrapper-inner-content-image-hover" id="gallerie2hover">
+                            <div class="wrapper-inner-content-image-hover-cercle">
+                                <span class="icon-search"></span>
+                            </div>
+                            <div class="wrapper-inner">
+                                <div class="wrapper-inner-content-text text-center">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-inner-title">
+                        <div class="text-wrap">
+                            <p><br>Le Pincab 40 pouces 4K est le plus prestigieux de nos modèles !</p>
+                            <p>Grâce à son écran playfield de 40 pouces en ultra haute définition,<br> vivez l'expérience la plus proche d'un vrai flipper.<br>
+                                Avec les logiciels installés, il vous suffit d'allumer le pincab<br> et de sélectionner votre plateau de jeu pour commencer à jouer!</p>
+                        </div>
+
+                        <p id="minifliptext2">Options disponibles :<br></p>
+                        <div class="wrapper-inner-title-3">
+
+                            <p>- Accéléromètre : il permet de bouger la bille<br> en secouant le flipper pour plus de réalisme.<br>
+
+                                <br>- Lance bille avec potentiomètre : dosez très précisément<br> le lancement de la bille en jeu, indispensable pour les skill shots.<br>
+
+                                <br>- Bouton de flipper à lamelles : Vivez le ressenti d'un vrai flipper grâce à cette option.<br> Nous équiperons alors votre pincab de boutons comme les flippers.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="wrapper-inner-title" id="wllpprTxt2">
+
+                    <p style="
+        font-size: 40px;
+        font-weight: bolder;
+        color: snow;
+        text-shadow: #7182d6 2px 2px;
+        margin-top: 20px;
+        margin-bottom: 20px;">
+                        " Un flipper mais pas que ! "</p>
+
+                    <div class="container">
+                        <div id="carouselExampleInterval2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner"  style="
+                width: 95%;
+                height: 95%;
+                margin-left:auto;
+                margin-right: auto">
+                                <div class="carousel-item active" data-interval="10000">
+                                    <img src="/assets/img/accueil/other/ecorche.webp" loading="eager" alt="Entrailles Pincab">
+                                </div>
+                                <div class="carousel-item" data-interval="2000">
+                                    <img src="/assets/img/accueil/other/ecorche2.webp" loading="lazy" alt="Ecorché Pincab Side">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/img/accueil/other/ecorche3.webp" loading="lazy" alt="Ecorché Pincab Back">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/img/accueil/other/ecorche4.webp" loading="lazy" alt="Ecorché Pincab Tire Bille">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/img/accueil/other/ecorche5.webp" loading="lazy" alt="Ecorché Pincab PC">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="wrapper2"
+                         style="display: flex;
+                 flex-direction: column;
+                 justify-content: space-between;
+                 justify-items: center">
+                        <div class="wrapper-inner-title">
+
+                            <p style="text-shadow: #7182d6 2px 2px;">
+                            <p style="font-size: 35px;text-decoration-line: underline">Pincab munis de 4 systèmes:</p>
+
+                            - JUKEBOX<br>
+                            - ARCADE MAME +220 Jeux Arcade verticaux<br>
+                            - KARAOKÉ<br>
+                            - FLIPPER 350 tables toutes generations<br>
+                            <br>
+                            Même contact que sur un vrai, permet une sensation et réactivité au top !
+
+                            <p style="font-size:26px;text-shadow: #7182d6 2px 2px;margin-top: 40px;text-decoration-line: overline">" Le processus de fabrication présenté en vidéo "</p>
+
+                            <div itemscope itemtype="https://www.neoflips.eu" class="container" id="videoprezfabrik">
+                          <video controls autoplay muted loop> <source itemprop="video" src="/assets/video/prezfabrik.webm" type="video/webm">
+                          </video>
+                           
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+	

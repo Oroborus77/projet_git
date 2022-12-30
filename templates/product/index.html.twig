@@ -1,0 +1,15 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Admin-Ajouter Produits{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h1 style="text-align: center;text-decoration-line: underline;color:black;font-weight:bolder;">Ajouter un produit</h1>
+    </div>
+
+    <div style="font-weight: bold;margin-top: 10px;text-align: center">
+    {{ form(productform) }}
+    </div>
+
+{% endblock %}

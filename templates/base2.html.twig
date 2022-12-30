@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Achat Pincab Flipper Virtuel(Projet Etudiant - Proof of concept)Neoflips.eu vous propose plusieurs types de Pincabs à sélectionner selon vos envies.Du format le plus compact à échelle 1/1,découvrez le modèle correspondant à vos envies.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Neoflips Pincabs{% endblock %}</title>
+        <link rel="icon"
+              href="{{ asset('assets/img/icone.avif') }}">
+
+    {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/acc.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/accButtons.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/Icomoon/style.css') }}">
+
+    {% endblock %}
+</head>
+<body>
+<header>
+    <div class="collapse navbar-nav-scroll"  id="navbarHeader"
+         style="background-image: url({{ asset('assets/img/blackwallapaper.webp') }});
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 position: fixed;
+                 width: 100%;
+                 padding-top: 65px;
+                 padding-bottom: 20px;
+                 scroll-behavior: smooth;
+                 z-index: 112;
+                 font-family: 'Signika Negative', sans-serif;"alt="Image bannière">
+        <div class="container" style="max-width: 80%;">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4"
+                     style="border-style: double;
+                                border-color: #b3d7ff;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                vertical-align: center;
+                                max-height: 30%;
+                                max-width: 100%;
+                                ">
+                    <h4 class="text-center"
+                        style="color: whitesmoke;
+                            text-decoration-line: underline;
+                            margin-bottom: 20px;">
+                        Qui sommes nous?
+                    </h4>
+                    <p class="text-center"
+                       style="color: #0dcaf0;
+                                font-size: 25px;
+                                text-align: center;
+                                vert-align: middle;
+                                ">
+                        Neoflips a été fondé en 2016 par X et Y...
+                        Texte description entreprise
+                    </p>
+
+                    <img style="
+                        max-width: 60%;
+                        margin-top: 45px;
+                        margin-bottom: 25px;
+                        border-radius: 5%;"
+                      src="{{ asset('assets/img/groupavatar.avif') }}" alt="Image profil entreprise">
+
+                </div>
+                <div class="col-sm-4 md-1 py-4" style="text-align: center;">
+                    <h4 style="color: #b3d7ff"
+                        class="text">
+                        <h4 style="border-style: double;
+                            color: #b3d7ff;
+                            font-size: 32px">
+                            Contactez Nous:<br>
+                        </h4>
+                        <a style="font-weight: bolder;
+                                font-size: 20px"
+                           href="mailto:Neoflips@gmail.com"
+                           target="_blank">Mail @NeoFlips.
+                        </a>
+                    </h4><br>
+                    <ul class="list-unstyled"
+                        style="text-align: center;
+                                   font-weight: bolder;
+                                   font-size: 22px">
+                        <h4 style="color: #b3d7ff;
+                          border-style: double;
+                          font-size: 32px">
+                            Raccourcis vers les pages:
+                        </h4>
+                        {%  if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('app_accueil') }}">Accueil</a></li>
+                            <li><a href="{{ path('app_user_index') }}">Users</a></li>
+                            <li><a href="{{ path('app_product_index') }}">Produits</a></li>
+                            <li><a href="{{ path('app_category_index') }}">Categorie</a></li>
+                            <li><a href="{{ path('mycart') }}">Panier</a></li>
+                            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                            <h4 style="color:  #b3d7ff;
+                                border-style: double;
+                                font-size: 32px">
+                                Catégories:
+                            </h4>
+                        {% elseif is_granted('ROLE_USER') %}
+                            <li><a href="{{ path('app_accueil') }}">Accueil</a></li>
+                            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                            <li><a href="{{ path('mycart') }}">Mon Panier</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                            <li><a href="{{ path('inscription') }}">Inscription</a></li>
+                            <li><a href="{{ path('mycart') }}">Panier</a></li>
+                            <li> <a>Fermer le Menu :</a>
+                                <button class="glow-on-hover"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#navbarHeader"
+                                        aria-controls="navbarHeader"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation"
+                                        style="
+                                                width:80px;
+                                                height:60px;
+                                                border-radius: 5%;
+                                                "><a>Fermer</a></button>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top" id="navbar"
+         style="
+             animation: ease-in-out;
+             transition: 0.5s;
+             max-width: 100%;
+             background: rgb(111,111,111);
+             background: linear-gradient(100deg, rgba(111,111,111,1) 0%, rgba(0,171,255,1) 100%);
+             opacity: 85%">
+
+        <div class="container d-flex justify-content-between" id="navbarr" style="width: 100%;display: flex">
+            <a href="{{ path('app_accueil') }}"
+               class="navbar-brand d-flex align-items-center" id="navbarimage">
+                <img src="{{ asset('assets/img/pnblanc.avif') }}"
+                     width="36" height="30"
+                     fill="none"
+                     class="mr-2">
+                <strong style="
+                    font-family: 'Lobster', cursive;
+                    opacity: 100%;">
+                    Neoflips: Pincabs
+                </strong>
+            </a>
+
+            <div class="glow-on-hover collapsed" style="max-width: 100px;max-height: 40px;background-color: black; z-index: 10;margin-left:-10px;border-style:solid;">
+                <a href="{{ path('app_all_product') }}"
+                   class="navbar-brand d-flex">
+                    <strong style="
+                    margin-left: 11px;
+                    margin-top: -4px;
+                    font-family: 'Lobster', cursive;
+                    opacity: 100%;">
+                        Boutique
+                    </strong>
+                </a>
+            </div>
+
+
+            <button class="glow-on-hover collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarHeader"
+                    aria-label="Toggle navigation"
+                    style="width:40px;
+                        border-style: solid;
+                        background-color: black;
+                        font-size: 10px;
+                        height:40px;
+                        z-index:0;
+                        border-radius: 10%;
+                        "><span style="margin-left: -1.5px;z-index: -1">MENU</span>
+            </button>
+        </div>
+    </div>
+</header>
+{%  for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<section class="jumbotron text-center"
+         style="background: url({{ asset('assets/img/colorfulbar.gif') }});
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 margin-bottom: 0px;
+                 font-size: 35px">
+</section>
+{% block body %}
+{% endblock %}
+
+    <footer id="footer" class="row" style="
+            font-size: 15px;
+            color: darkorange;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            background: url({{ asset('assets/img/colorfulbar.gif') }});
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0px;
+            padding: 0px;
+            margin-top: 0px;">
+
+        <div class="col-4" >
+            <a style="display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+                align-items: center"
+               href="https://fr-fr.facebook.com" target="_blank" class="fa fa-facebook-square">
+                <h5 style="margin-top: 10px">Facebook</h5>
+            </a>
+            <ul class="nav flex-column" style="text-align: center">
+                <li class="nav-item mb-2"><a href="https://fr-fr.facebook.com" target="_blank" class="nav-link p-0 text-muted">Retrouvez nous sur Facebook</a></li>
+            </ul>
+        </div>
+
+        <div class="col-4 text-center">
+            <a style="display: flex;flex-direction: column;margin-top: 20px;align-items: center" href="mailto:Neoflips@gmail.com" target="_blank" class="fa fa-square-envelope">
+                <h5 style="margin-top: 10px">Nous contacter</h5>
+            </a>
+          </div>
+       
+        <div class="col-4">
+            <a style="display: flex;flex-direction: column;margin-top: 20px;align-items: center" href="https://twitter.com" target="_blank" class="fa fa-twitter-square">
+                <h5 style="margin-top: 10px">Twitter</h5>
+            </a>
+            <ul class="nav flex-column" style="text-align: center">
+                <li class="nav-item mb-2"><a href="https://twitter.com" target="_blank" class="nav-link p-0" style="">Suivez nous sur Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="{{ asset('assets/js/jquery-2.1.4.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/typed.min.js.map') }}" defer></script>
+    <script src="{{ asset('assets/js/typed.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/bootstrap.js') }}" defer></script>
+    <script defer src="https://kit.fontawesome.com/e21bd95457.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+<script>
+    var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings'
+    });
+</script>
+<script>
+    var typed2 = new Typed('#typed2', {
+        stringsElement: '#typed-strings2'
+    });
+</script>
+
+<script>
+    // navabr
+    let lastScrollTop = 0;
+    navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll' , function()
+    {
+        const scrollTop = this.window.pageTOffset ||
+            this.document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            navbar.style.top="-50px";
+        } else {
+            navbar.style.top="0";
+        }
+        lastScrollTop = scrollTop;
+    });
+
+</script>
+</body>
+</html>
+	

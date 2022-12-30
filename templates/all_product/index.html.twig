@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+{% block title %}Boutique Neoflips{% endblock %}
+
+{% block body %}
+    <div class="jumbotron-text-center">
+
+        <video id="videobann" autoplay muted loop>
+            <source src="/assets/img/videos/colorbar6.webm" type="video/webm"></video>
+
+        <div class="overlay">
+            <div id="typed-strings" class="productIntro">
+
+                <p>Voici une petite <strong>sélection de</strong></p>
+                <p><strong>Nos Produits</strong> phares :</p>
+            </div>
+            <span id="typed"></span>
+        </div>
+    </div>
+
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="10000">
+                        <img src="{{ asset('assets/img/carousel/0.webp') }}" class="d-block w-100" alt="Showroom Pincabs Neoflips.eu">
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+                        <img src="{{ asset('assets/img/carousel/2.webp') }}" class="d-block w-100" alt="Pincabs 32pouces Goldorak">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('assets/img/carousel/3.webp') }}" class="d-block w-100" alt="Pincab Slimcab Attack from Mars">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('assets/img/carousel/4.webp') }}" class="d-block w-100" alt="Pincab Slimcab Addams Family">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('assets/img/carousel/1.webp') }}" class="d-block w-100" alt="Pincab 40 pouces Big Bang bar">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        <div class="album py-6 bg-light" id="albumProd">
+            <div class="container" style="
+            max-width:90%;
+    background-blend-mode: overlay;
+            border-radius: 3%;">
+
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-md-4"
+                             style="
+                             display: flex;
+                             margin-top: 20px;
+                             margin-bottom: 10px;
+                            text-align: center;
+                            font-family: 'Lobster', 'AFM Pinball';">
+
+                            <div class="card mb-4 shadow-sm" id="prodimage"
+                                 style="
+                                 margin-top: 10px;
+                                 margin-bottom: 10px;
+                                 padding: 5%;
+                                 background: linear-gradient(0deg, rgba(223,223,223,0.9552287467721463) 59%, rgba(62,218,225,0.96) 65%);
+                                 border-top-left-radius: 15%;
+                                 border-top-right-radius: 15%;
+                                 width: 100% ">
+
+                                <div class="container-prod">
+                                    <a href="{{ path('productfront',{id:product.id}) }}">
+                                        <img src="{{ asset('/assets/img/') }}{{ product.image }}"
+                                             style="border-top-left-radius: 15%;
+                                     border-top-right-radius: 15%;
+                                       height: 500px"
+                                             class="image-prod"
+                                             alt="Pincab Neoflips.eu">
+                                    </a>
+
+                                    <div class="overlay-prod"style="display: flex;justify-content: center;flex-direction: column">
+                                        <div style="color: #00a8fd;font-weight: bolder;font-size: 30px;font-family: {{ asset('assets/fonts/lobster-two-v18-latin-regular.woff') }}">{{ product.nom }}</div>
+                                        <a href="{{ path('productfront',{id:product.id}) }}" style="font-size: 20px;width: 150px;height: 60px;flex-direction: row;margin-top: 10px;background-color: orangered;opacity: 95%;color: whitesmoke" alt="Fiche produit" class="btn"><p style="font-size: 21px;margin-bottom: auto;margin-top: auto">Fiche Produit</p></a>
+                                    </div>
+                                </div>
+
+                                <div class="card-body" style="border-radius: 1%;
+                                border-style: solid;
+                                border-color: #0dcaf0;
+                            background: linear-gradient(0deg, rgba(223,223,223,0.9552287467721463) 59%, rgba(255,255,255,0.9580298672203257) 100%);">
+                                    <p class="card-text"
+                                       style="color: black;
+                                            font-size: 25px">
+                                        {{ product.description }}
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="accordion-button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

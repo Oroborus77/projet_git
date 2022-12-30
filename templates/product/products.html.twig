@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+    <table class="table">
+        <tbody id="tabprod">
+        {% for product in products %}
+        <tr>
+            <th style="display: flex;flex-wrap: wrap;flex-direction: column;align-items: center" scope="col">ID :</th>
+            <th style="text-decoration-line: underline;display: flex;flex-wrap: wrap;flex-direction: column;align-items: center" scope="row">{{ product.id }}</th>
+            <th style="display: flex;flex-direction: column;align-items: center" scope="col">Image :</th>
+            <td style="display: flex;flex-direction: column;align-items: center"> <img src="{{ asset('assets/img/') }}{{ product.image }}" width="100" height="100" alt="Image du produit"></td>
+            <th style="display: flex;flex-direction: column;align-items: center" scope="col">Nom :</th>
+            <td style="text-decoration-line: underline;display: flex;flex-wrap: wrap;flex-direction: column;align-items: center">{{ product.nom }}</td>
+            <th style="display: flex;flex-direction: column;align-items: center" scope="col">Réf :</th>
+            <td style="text-decoration-line: underline;display: flex;flex-wrap: wrap;flex-direction: column;align-items: center">{{ product.reference }}</td>
+            <th style="display: flex;flex-direction: column;align-items: center" scope="col">Prix :</th>
+            <td style="text-decoration-line: underline;display: flex;flex-wrap: wrap;flex-direction: column;align-items: center">{{ product.prix }}€</td>
+
+            <td style="display: flex;flex-direction: column;align-items: center;"> <a style="display: flex;flex-direction: column;vertical-align: center;justify-items:center;text-align: center;justify-content: center" href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-info">Editer produit</a></td>
+            <td style="display: flex;flex-direction: column;align-items: center;"> <a style="display: flex;flex-direction: column;vertical-align: center;justify-items:center;text-align: center;justify-content: center" href="{{ path('app_product_delete', {'id': product.id}) }}" class="btn btn-danger">Supprimer produit</a></td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <a href="{{ path('app_product') }}" style="font-weight: bolder;display: flex;width: 100%;margin-bottom: 15px;margin-top:15px;align-items:center;justify-items: center;justify-content: center;" class="btn btn-primary">Ajouter un produit</a>
+    <a href="{{ path('app_accueil') }}" style="color:white;font-weight: bolder;display: flex;margin-bottom: 15px;margin-top:15px;justify-items: center;width: 100%;align-items:center;justify-items: center;justify-content: center;"  class="btn btn-outline-dark">Retour à l'Accueil</a>
+    <a href="{{ path('app_logout') }}" style="font-weight: bolder;display: flex;margin-bottom: 15px;margin-top:15px;width: 100%;align-items:center;justify-items: center;justify-content: center;"  class="btn btn-outline-danger alert-dark">Déconnexion</a>
+
+{% endblock %}

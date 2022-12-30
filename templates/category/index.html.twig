@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-xxl" style="margin-top: auto;margin-bottom: auto;text-align: center;width: 100%;height:100%">
+    <div class="jumbotron text-center"
+             style="background: url({{ asset('assets/img/videos/GIF/colorfulbar.gif') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     margin-bottom: 0px;
+                     font-size: 35px">
+        <h1 style="text-align: center;text-decoration-line: underline;">Index des Catégories</h1>
+    </div>
+
+
+    <table class="table" style="
+background: linear-gradient(90deg, rgba(170,170,170,0.9272175422903537) 0%, rgba(198,198,198,0.9132119400494573) 8%, rgba(245,248,250,0.9244164218421744) 49%, rgba(187,186,186,0.9048085787049195) 91%, rgba(113,113,113,0.9496265058757878) 100%);
+        height: 100%">
+        <thead>
+            <tr>
+                <th style="text-align: center">Id:</th>
+                <th style="text-align: center">Nom :</th>
+                <th style="text-align: center">Actions:</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td style="display:flex;vertical-align: center;justify-content: center;align-items: center;margin-right: auto;margin-left: auto;">{{ category.id }}</td>
+                <td style="flex-direction: row;text-align: center;justify-content: center;align-items: center;margin-right: auto;margin-left: auto">{{ category.name }}</td>
+                <td>
+                    <div style="text-align: center">
+                    <a style="display: flex;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: auto;margin-left: auto;margin-bottom: 5px;width: 60px;height:30px" class="btn btn-primary" href="{{ path('app_category_show', {'id': category.id}) }}">Voir</a>
+                    <a style="display: flex;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: auto;margin-left: auto;width: 60px;height:30px" class="btn btn-primary" href="{{ path('app_category_edit', {'id': category.id}) }}">Editer</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Liste vide.../td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div style="width:100%;margin-left:auto;margin-right: auto ">
+        <br>
+    <a style="display: flex;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: auto;margin-left: auto" class="btn btn-primary" href="{{ path('app_category_new') }}">Nouvelle Catégorie</a>
+    <br>
+    <a style="display: flex;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: auto;margin-left: auto" class="btn btn-warning" href="{{ path('app_accueil') }}">Accueil</a>
+    <br>
+    <a style="display: flex;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: auto;margin-left: auto" class="btn btn-danger" href="{{ path('app_logout') }}">Déconnexion</a>
+    <br>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
